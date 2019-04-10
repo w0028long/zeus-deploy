@@ -1,0 +1,66 @@
+version: '3'
+services:
+   golang:
+     build: ./project-golang
+     container_name: zeus_api_auth
+     restart: always
+     networks:
+        zeus-com:
+          aliases: 
+            - zeus_auth
+     volumes:
+        - ~/Work:/data
+   nodejs:
+     build: ./project-node
+     container_name: zeus_admin_ui
+     restart: always
+     networks:
+        zeus-com:
+          aliases: 
+            - api-admin-ui
+     volumes:
+        - ~/Work:/data
+   nginx:
+      build: ./project-nginx
+      container_name: zeus_nginx
+      volumes:
+        - ~/Work:/data
+        - ../etc/nginx/conf.d:/etc/nginx/conf.d
+        - ../etc/nginx/ca:/etc/nginx/ca
+        - ../etc/nginx/nginx.conf:/usr/local/openresty/nginx/conf/nginx.conf
+      restart: always
+      ports:
+        - "80:80"
+        - "443:443"
+      networks:
+        zeus-com:
+          aliases: 
+            - zeus_nginx
+   mysql:
+      build: ./mysql
+      container_name: zeus_mysql
+      networks:
+        zeus-com:
+          aliases:
+          - admin-mysql
+      volumes:
+        - ~/Work/data/zeus_mysql:/var/lib/mysql
+        - ~/Work/log/zeus_mysql:/data/log
+      environment:
+        MYSQL_ROOT_PASSWORD: 123456
+      restart: always
+      ports:
+        - "3308:3308"
+   redis:
+      build: ./redis
+      container_name: zeus_redis
+      networks:
+        zeus-com:
+          aliases:
+          - zeus_redis
+      volumes:
+        - ~/Work/log:/data/log
+      restart: always
+
+networks:
+  zeus-com:
