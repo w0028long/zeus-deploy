@@ -13,7 +13,6 @@ services:
    nodejs:
      build: ./project-node
      container_name: zeus_admin_ui
-     restart: always
      networks:
         zeus-com:
           aliases: 
