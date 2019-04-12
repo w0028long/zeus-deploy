@@ -7,7 +7,7 @@ services:
      networks:
         zeus-com:
           aliases: 
-            - zeus_auth
+            - zeus_api_auth
      volumes:
         - ~/Work:/data
    nodejs:
@@ -42,7 +42,7 @@ services:
       networks:
         zeus-com:
           aliases:
-          - admin-mysql
+          - zeus_mysql
       volumes:
         - ~/Work/data/zeus_mysql:/var/lib/mysql
         - ~/Work/log/zeus_mysql:/data/log
