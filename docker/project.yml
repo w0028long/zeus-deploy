@@ -46,6 +46,8 @@ services:
         - ~/Work/data/zeus_mysql:/var/lib/mysql
         - ~/Work/log/zeus_mysql:/data/log
         - ~/Work:/data
+        - ~/Work/src/web/api.admin.bullteam.cn/install/auth.sql:/docker-entrypoint-initdb.d/auth.sql
+        - ~/Work/src/web/api.admin.bullteam.cn/install/casbin.sql:/docker-entrypoint-initdb.d/casbin.sql
       environment:
         - MYSQL_ALLOW_EMPTY_PASSWORD=yes
         - MYSQL_ROOT_PASSWORD=123456

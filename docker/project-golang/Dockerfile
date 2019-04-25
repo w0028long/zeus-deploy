@@ -8,9 +8,9 @@ RUN yum install -y git\
     chmod 600 /root/.ssh/id_rsa;
 ENV MYSQL_ETC1_PASSWORD="123456" \
     MYSQL_ETC1_MASTER_HOST="zeus_mysql" \
-    MYSQL_ETC1_USERNAME='docker' \
+    MYSQL_ETC1_USERNAME='root' \
     MYSQL_DB='auth' \
-    MYSQL_CASBINDB='casbin' \
+    MYSQL_CASBINDB='auth' \
     REDIS_ETC1_HOST="zeus_redis" \
     REDIS_ETC1_PORT="6379" \
     REDIS_ETC1_PASSWORD=""
