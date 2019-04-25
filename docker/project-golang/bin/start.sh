@@ -26,4 +26,4 @@ export GOPROXY=https://goproxy.io
 export GO111MODULE=on
 go build -o zeus
 chmod a+x ./zeus
-./zeus
+./zeus start -c ../../conf
