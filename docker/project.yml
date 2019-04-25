@@ -47,8 +47,7 @@ services:
         - ~/Work/log/zeus_mysql:/data/log
         - ~/Work:/data
       environment:
-        MYSQL_USER: root
-        MYSQL_ALLOW_EMPTY_PASSWORD: yes
+         MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       restart: always
       ports:
         - "3308:3308"
