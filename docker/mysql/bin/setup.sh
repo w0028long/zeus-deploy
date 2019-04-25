@@ -12,9 +12,9 @@ echo `service mysql status`
 
 echo '2.开始导入数据....'
 #导入数据
-mysql < /data/src/web/api.admin.bullteam.cn/install/auth.sql
+mysql -u root -p 123456 < /data/src/web/api.admin.bullteam.cn/install/auth.sql
 echo '3.导入auth数据完毕....'
-mysql < /data/src/web/api.admin.bullteam.cn/install/casbin.sql
+mysql -u root -p 123456 < /data/src/web/api.admin.bullteam.cn/install/casbin.sql
 echo '4.导入casbin数据完毕....'
 
 sleep 3
