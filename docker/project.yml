@@ -45,6 +45,7 @@ services:
       volumes:
         - ~/Work/data/zeus_mysql:/var/lib/mysql
         - ~/Work/log/zeus_mysql:/data/log
+        - ~/Work:/data
       environment:
         MYSQL_ROOT_PASSWORD: 123456
       restart: always
