@@ -27,3 +27,8 @@ npm run build:prod
 #部署www.bullteam.cn
 repo_url="git@github.com:bullteam/website.git"
 git_pull_or_clone ${repo_url} "/data/src/web/www.bullteam.cn" master
+
+
+#部署doc.bullteam.cn
+repo_url="git@github.com:bullteam/zeus-wiki.git"
+git_pull_or_clone ${repo_url} "/data/src/web/doc.bullteam.cn" master
